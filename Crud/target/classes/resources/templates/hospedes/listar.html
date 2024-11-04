@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Hóspedes</title>
+</head>
+<body>
+    <h1>Hóspedes Cadastrados</h1>
+    <a href="/hospedes/novo">Adicionar Hóspede</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Documento</th>
+            <th>Data de Nascimento</th>
+        </tr>
+        <tr th:each="hospede : ${hospedes}">
+            <td th:text="${hospede.id}"></td>
+            <td th:text="${hospede.numDocumento}"></td>
+            <td th:text="${hospede.dataNascimento}"></td>
+        </tr>
+    </table>
+</body>
+</html>
