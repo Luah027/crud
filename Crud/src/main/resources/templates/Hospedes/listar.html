@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Hóspedes</title>
+</head>
+<body>
+    <h1>Hóspedes Cadastrados</h1>
+    <a href="http://localhost:8080/hospedes/novo">Adicionar Hóspede</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Documento</th>
+            <th>Data de Nascimento</th>
+            <th>Ações</th>
+        </tr>
+        <tr th:each="hospede : ${hospedes}">
+            <td th:text="${hospede.id}"></td>
+            <td th:text="${hospede.numDocumento}"></td>
+            <td th:text="${hospede.dataNascimento}"></td>
+            <td>
+                <a th:href="@{/hospedes/editar/{id}(id=${hospede.id})}">Editar</a>
+                <a th:href="@{/hospedes/excluir/{id}(id=${hospede.id})}">Excluir</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
