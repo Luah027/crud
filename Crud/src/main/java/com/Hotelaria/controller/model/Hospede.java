@@ -16,8 +16,28 @@ public class Hospede {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "O número do documento é obrigatório.")
-    private String numDocumento;
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	@NotBlank(message = "O nome do hospede é obrigatório.")
+    private String nome;
     
     @NotBlank(message = "A data de nascimento é obrigatória.")
     private LocalDate dataNascimento;

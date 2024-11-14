@@ -15,7 +15,7 @@
         </tr>
         <tr th:each="hospede : ${hospedes}">
             <td th:text="${hospede.id}"></td>
-            <td th:text="${hospede.numDocumento}"></td>
+            <td th:text="${hospede.nome}"></td>
             <td th:text="${hospede.dataNascimento}"></td>
             <td>
                 <a th:href="@{/hospedes/editar/{id}(id=${hospede.id})}">Editar</a>

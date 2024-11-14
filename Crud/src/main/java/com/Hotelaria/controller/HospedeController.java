@@ -32,7 +32,7 @@ public class HospedeController {
         return "index";
     }
 
-    @PostMapping
+    @PostMapping("/salvar")
     public String salvarHospede(@ModelAttribute Hospede hospede) {
         hospedeRepository.save(hospede);
         return "redirect:/hospedes";
